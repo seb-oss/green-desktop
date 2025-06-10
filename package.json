@@ -1,14 +1,18 @@
 {
   "name": "green-desktop",
-  "version": "1.0.0",
-  "description": "Green Design System",
+  "version": "1.0.1",
+  "description": "Green Design System Desktop App",
+  "author": {
+    "name": "astrit",
+    "email": "am@astrit.co"
+  },
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build --mac --win",
-    "build:mac": "electron-builder build --mac",
-    "build:win": "electron-builder build --win",
-    "release": "electron-builder build --mac --win -p always"
+    "build": "electron-builder build",
+    "build:win": "electron-builder build --win -p always",
+    "build:mac": "electron-builder build --mac -p always",
+    "release": "electron-builder build -p always"
   },
   "build": {
     "appId": "com.seb.green",
@@ -37,19 +41,6 @@
       "target": [
         "nsis"
       ]
-    },
-    "linux": {
-      "icon": "assets/gds.png",
-      "target": [
-        "AppImage"
-      ]
     }
-  },
-  "devDependencies": {
-    "electron": "^28.0.0",
-    "electron-builder": "^24.9.1"
-  },
-  "dependencies": {
-    "electron-updater": "^6.6.2"
   }
 }
