@@ -36,4 +36,6 @@ jobs:
       - name: Build MacOS
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+          MAC_SIGNING: false
         run: npx electron-builder build --mac -p always

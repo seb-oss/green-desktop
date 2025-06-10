@@ -37,10 +37,12 @@
     },
     "mac": {
       "target": "zip",
-      "category": "public.app-category.developer-tools",
       "icon": "assets/gds.icns",
       "identity": null,
-      "hardenedRuntime": false
+      "signIgnore": "*",
+      "gatekeeperAssess": false,
+      "hardenedRuntime": false,
+      "notarize": false
     },
     "win": {
       "icon": "assets/gds.ico",
