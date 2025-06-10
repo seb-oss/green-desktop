@@ -1,0 +1,28 @@
+{
+  "name": "green-desktop",
+  "version": "1.0.0",
+  "description": "Green Design System Desktop App",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --mac --win",
+    "build:mac": "electron-builder build --mac",
+    "build:win": "electron-builder build --win"
+  },
+  "author": "Astrit",
+  "license": "MIT",
+  "build": {
+    "appId": "com.seb.green",
+    "productName": "Green Design System",
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "assets/gds.icns"
+    },
+    "win": {
+      "icon": "assets/gds.ico"
+    },
+    "linux": {
+      "icon": "assets/gds.png"
+    }
+  }
+}
