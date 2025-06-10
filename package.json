@@ -42,10 +42,16 @@
       "target": "zip",
       "icon": "assets/gds.icns",
       "identity": null,
-      "signIgnore": "*",
-      "gatekeeperAssess": false,
       "hardenedRuntime": false,
-      "notarize": false
+      "gatekeeperAssess": false,
+      "notarize": false,
+      "artifactName": "Green.Design.System.zip",
+      "signIgnore": [
+        "**/*"
+      ],
+      "electronLanguages": [
+        "en"
+      ]
     },
     "win": {
       "icon": "assets/gds.ico",

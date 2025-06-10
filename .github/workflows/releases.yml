@@ -37,5 +37,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           CSC_IDENTITY_AUTO_DISCOVERY: false
+          APPLE_ID: ""
+          APPLE_APP_SPECIFIC_PASSWORD: ""
+          CSC_LINK: ""
+          CSC_KEY_PASSWORD: ""
           MAC_SIGNING: false
-        run: npx electron-builder build --mac -p always
+        run: |
+          export CSC_IDENTITY_AUTO_DISCOVERY=false
+          npx electron-builder build --mac -p always --config.mac.identity=null
