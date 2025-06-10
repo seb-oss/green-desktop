@@ -1,6 +1,6 @@
 {
   "name": "green-desktop",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Green Design System Desktop App",
   "author": {
     "name": "astrit",
@@ -36,12 +36,11 @@
       "output": "dist"
     },
     "mac": {
+      "target": "zip",
       "category": "public.app-category.developer-tools",
       "icon": "assets/gds.icns",
-      "target": [
-        "dmg",
-        "zip"
-      ]
+      "identity": null,
+      "hardenedRuntime": false
     },
     "win": {
       "icon": "assets/gds.ico",

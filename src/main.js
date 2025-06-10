@@ -12,12 +12,26 @@ function createWindow() {
     height: 800,
     minWidth: 800,
     minHeight: 600,
+    frame: false,
+    trafficLightPosition: { x: 16, y: 16 },
+    titleBarStyle: "hidden",
     icon: path.join(__dirname, "../assets/gds.png"),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.join(__dirname, "preload.js"),
     },
+  });
+
+  mainWindow.webContents.on("did-finish-load", () => {
+    mainWindow.webContents.insertCSS(`
+      body {
+        -webkit-app-region: drag;
+      }
+      button, a, input, [role="button"] {
+        -webkit-app-region: no-drag;
+      }
+    `);
   });
 
   // Check for updates
