@@ -14,6 +14,13 @@
     "build:mac": "electron-builder build --mac -p always",
     "release": "electron-builder build -p always"
   },
+  "dependencies": {
+    "electron-updater": "^6.6.2"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
   "build": {
     "appId": "com.seb.green",
     "productName": "Green Design System",
