@@ -1,5 +1,10 @@
 const { app, BrowserWindow } = require("electron");
+const { autoUpdater } = require("electron-updater");
 const path = require("path");
+
+// Configure auto-updater
+autoUpdater.autoDownload = true;
+autoUpdater.autoInstallOnAppQuit = true;
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -15,6 +20,9 @@ function createWindow() {
     },
   });
 
+  // Check for updates
+  autoUpdater.checkForUpdatesAndNotify();
+
   // Show loading screen
   mainWindow.loadFile("src/loading.html");
 
@@ -23,23 +31,7 @@ function createWindow() {
     mainWindow.loadURL("https://seb.io");
   }, 1000);
 
-  // Optional: Remove menu bar
   mainWindow.setMenuBarVisibility(false);
-
-  // Optional: Open DevTools in development
-  if (process.env.NODE_ENV === "development") {
-    mainWindow.webContents.openDevTools();
-  }
 }
 
-app.whenReady().then(() => {
-  createWindow();
-
-  app.on("activate", function () {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
-  });
-});
-
-app.on("window-all-closed", function () {
-  if (process.platform !== "darwin") app.quit();
-});
+app.whenReady().then(createWindow);
