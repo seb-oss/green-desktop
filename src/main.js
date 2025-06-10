@@ -7,7 +7,7 @@ function createWindow() {
     height: 800,
     minWidth: 800,
     minHeight: 600,
-    icon: path.join(__dirname, "../assets/icon.png"),
+    icon: path.join(__dirname, "../assets/gds.png"),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -20,7 +20,7 @@ function createWindow() {
 
   // Load your web app
   setTimeout(() => {
-    mainWindow.loadURL("https://your-domain.com");
+    mainWindow.loadURL("https://seb.io");
   }, 1000);
 
   // Optional: Remove menu bar
