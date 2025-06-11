@@ -25,15 +25,15 @@ function createWindow() {
 
   mainWindow.webContents.on("did-finish-load", () => {
     mainWindow.webContents.insertCSS(`
-      body {
-        -webkit-app-region: drag;
-      }
-      button, a, input, [role="button"] {
-        -webkit-app-region: no-drag;
-      }
+     
     `);
   });
-
+  //  body {
+  //         -webkit-app-region: drag;
+  //       }
+  //       button, a, input, [role="button"] {
+  //         -webkit-app-region: no-drag;
+  //       }
   // Check for updates
   autoUpdater.checkForUpdatesAndNotify();
 
@@ -42,7 +42,7 @@ function createWindow() {
 
   // Load your web app
   setTimeout(() => {
-    mainWindow.loadURL("https://seb.io");
+    mainWindow.loadURL("https://stg.seb.io");
   }, 1000);
 
   mainWindow.setMenuBarVisibility(false);
